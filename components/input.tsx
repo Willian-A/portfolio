@@ -32,7 +32,7 @@ export default function Input({
 
   return (
     <div
-      className={`relative text-left border rounded-lg border-white-500 focus:border-white-900 ${className}`}
+      className={`relative text-left border rounded-lg border-white-500 focus-within:border-white-900 ${className}`}
       {...rest}
     >
       <RenderInputTypes />

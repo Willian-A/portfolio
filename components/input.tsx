@@ -37,8 +37,10 @@ export default function Input({
     >
       <RenderInputTypes />
       <label
-        className={`absolute font-light top-2/4 left-2 -translate-y-2/4 z-0 ${
-          !!value ? "text-xs top-2" : "peer-focus:text-xs peer-focus:top-2"
+        className={`absolute font-light left-2 z-0 ${
+          value.length > 0
+            ? "text-xs top-2"
+            : "top-2/4 -translate-y-2/4 peer-focus:text-xs peer-focus:top-2 peer-focus:translate-y-0"
         }`}
       >
         {placeholder}

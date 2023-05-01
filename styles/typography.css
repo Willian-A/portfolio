@@ -1,0 +1,40 @@
+h1 {
+  @apply font-light;
+  @apply text-[3.052rem];
+  @apply leading-[3.052rem];
+}
+
+h2 {
+  @apply font-light;
+  @apply text-[1.953rem];
+  @apply leading-[1.953rem];
+}
+
+h3 {
+  @apply text-[1.25rem];
+  @apply leading-[1.25rem];
+}
+
+p,
+nav a {
+  @apply font-light;
+  @apply text-base;
+  @apply leading-4;
+}
+
+p.small {
+  @apply text-[0.64rem];
+  @apply leading-[0.64rem];
+}
+
+nav a {
+  @apply mb-2;
+}
+
+nav a:not(.font-normal) {
+  @apply text-white-500;
+}
+
+nav a:not(.font-normal):hover {
+  @apply text-white-900;
+}

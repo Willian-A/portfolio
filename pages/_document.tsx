@@ -1,13 +1,15 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt-BR">
       <Head />
-      <body>
-        <Main />
-        <NextScript />
+      <body className="bg-black h-full absolute w-full flex justify-center items-center">
+        <section className="p-3 h-[calc(100%-theme(space.4)-theme(space.3))] w-[calc(100%-theme(space.4)-theme(space.3))] border border-solid border-white-500">
+          <Main />
+          <NextScript />
+        </section>
       </body>
     </Html>
-  )
+  );
 }

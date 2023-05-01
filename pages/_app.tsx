@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import "@/styles/typography.css";
+import { AnimatePresence } from "framer-motion";
 
 type Page<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactNode) => ReactNode;
@@ -38,8 +39,10 @@ export default function App({ Component, pageProps }: FixedAppProps) {
   const getLayout = Component.getLayout ?? ((page: ReactNode) => page);
 
   return (
-    <main className={`h-full ${neueMontreal.variable} font-NeueMontreal`}>
-      {getLayout(<Component {...pageProps} />)}
-    </main>
+    <AnimatePresence mode="wait">
+      <main className={`h-full ${neueMontreal.variable} font-NeueMontreal`}>
+        {getLayout(<Component {...pageProps} />)}
+      </main>
+    </AnimatePresence>
   );
 }

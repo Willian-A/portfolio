@@ -16,7 +16,7 @@ export default function Input({
     if (isTextarea) {
       return (
         <textarea
-          className="relative w-full h-[120px] mt-4 mb-2 px-2 bg-transparent peer z-10"
+          className="relative w-full h-[120px] mt-4 mb-2 px-2 bg-transparent peer duration-300 z-10"
           onChange={(e) => setValue(e.target.value)}
         />
       );
@@ -24,7 +24,7 @@ export default function Input({
 
     return (
       <input
-        className="relative w-full p-2 pt-4 bg-transparent peer z-10"
+        className="relative w-full p-2 pt-4 bg-transparent peer duration-300 z-10"
         onChange={(e) => setValue(e.target.value)}
       />
     );
@@ -32,12 +32,12 @@ export default function Input({
 
   return (
     <div
-      className={`relative text-left border rounded-lg border-white-500 focus-within:border-white-900 ${className}`}
+      className={`relative text-left border rounded-lg border-white-500 focus-within:border-white-900 duration-300 ${className}`}
       {...rest}
     >
       <RenderInputTypes />
       <label
-        className={`absolute font-light left-2 z-0 ${
+        className={`absolute font-light left-2 duration-300 z-0 ${
           value.length > 0
             ? "text-xs top-2"
             : "top-2/4 -translate-y-2/4 peer-focus:text-xs peer-focus:top-2 peer-focus:translate-y-0"

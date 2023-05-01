@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 * {
-  transition: 300ms;
   @apply box-border;
   @apply font-NeueMontreal;
 }

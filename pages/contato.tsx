@@ -11,7 +11,7 @@ export default function Contato() {
         <title>Willian Almeida</title>
       </Head>
       <div className="flex items-center justify-center row-span-3 col-start-2 col-span-2 text-right">
-        <div className="flex flex-col w-[250px] ">
+        <div className="flex flex-col w-[250px]">
           <p className="text-center mb-2">
             Mussum Ipsum, cacilds vidis litro abertis. Interagi no mé, cursus
             quis, vehicula ac nisi

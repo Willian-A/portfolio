@@ -16,7 +16,7 @@ const ReadMore = forwardRef(({}, ref) => {
   return (
     <div className="flex justify-end items-end row-span-1 col-end-4 col-span-2 text-right overflow-hidden">
       <p
-        className={`mr-3 font-normal ${
+        className={`mr-3 font-normal duration-300 ${
           shouldShow ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >

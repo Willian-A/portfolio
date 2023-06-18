@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Default from "../layouts/Default";
 import { ReactElement, useRef } from "react";
 import ReadMore from "@/components/readMore";
@@ -10,9 +9,6 @@ export default function Sobre() {
 
   return (
     <>
-      <Head>
-        <title>Willian Almeida</title>
-      </Head>
       <ReadMore ref={ReadMoreFunctions} />
       <div
         className="row-start-2 row-span-2 col-end-4 col-span-2 text-right overflow-hidden"
@@ -25,7 +21,7 @@ export default function Sobre() {
           ReadMoreFunctions.current?.changeHelperTextOpacity()
         }
       >
-        <div className="h-full overflow-scroll">
+        <div className="h-full overflow-y-scroll">
           <div className="mr-3">
             <p className="mb-3">
               Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris

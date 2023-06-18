@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Default from "../layouts/Default";
 import { ReactElement, useRef } from "react";
 import ReadMore from "@/components/readMore";
@@ -10,9 +9,6 @@ export default function Projetos() {
 
   return (
     <>
-      <Head>
-        <title>Willian Almeida</title>
-      </Head>
       <ReadMore ref={ReadMoreFunctions} />
       <div
         className="row-start-2 row-span-2 col-end-4 col-span-2 text-right overflow-hidden"

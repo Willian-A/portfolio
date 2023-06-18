@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import "@/styles/typography.css";
+import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 
 type Page<P = {}> = NextPage<P> & {
@@ -40,6 +41,9 @@ export default function App({ Component, pageProps }: FixedAppProps) {
 
   return (
     <AnimatePresence mode="wait">
+      <Head>
+        <title>Willian Almeida</title>
+      </Head>
       <main className={`h-full ${neueMontreal.variable} font-NeueMontreal`}>
         {getLayout(<Component {...pageProps} />)}
       </main>

@@ -1,13 +1,9 @@
-import Head from "next/head";
 import Default from "../layouts/Default";
 import { ReactElement } from "react";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Willian Almeida</title>
-      </Head>
       <p className="row-start-3 col-end-4 col-span-2 text-right">
         Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as
         pessoas mais interessantis.Interagi no mé, cursus quis, vehicula ac

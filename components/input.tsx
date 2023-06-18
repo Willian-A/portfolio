@@ -30,18 +30,26 @@ export default function Input({
     );
   }, [isTextarea]);
 
+  const handleDefaultTopDistance =
+    value.length > 0
+      ? "text-xs top-2"
+      : "top-2/4 -translate-y-2/4 peer-focus:text-xs peer-focus:top-2 peer-focus:translate-y-0";
+
+  const handleTextAreaTopDistance =
+    value.length > 0
+      ? "text-xs top-2"
+      : "top-5 -translate-y-2/4 peer-focus:text-xs peer-focus:top-2 peer-focus:translate-y-0";
+
   return (
     <div
-      className={`relative text-left border rounded-lg border-white-500 focus-within:border-white-900 duration-300 ${className}`}
+      className={`relative text-left border rounded-lg border-white-500 focus-within:border-white-900 duration-300 backdrop-blur-[2px] ${className}`}
       {...rest}
     >
       <RenderInputTypes />
       <label
         className={`absolute font-light left-2 duration-300 z-0 ${
-          value.length > 0
-            ? "text-xs top-2"
-            : "top-2/4 -translate-y-2/4 peer-focus:text-xs peer-focus:top-2 peer-focus:translate-y-0"
-        }`}
+          isTextarea ? handleTextAreaTopDistance : handleDefaultTopDistance
+        } `}
       >
         {placeholder}
       </label>

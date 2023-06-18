@@ -1,11 +1,14 @@
 import { ReactNode } from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
+import { AnimatePresence } from "framer-motion";
+
 import "@/styles/globals.css";
 import "@/styles/typography.css";
-import Head from "next/head";
-import { AnimatePresence } from "framer-motion";
+
+import { WavesBG } from "../components/wavesBackground";
 
 type Page<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactNode) => ReactNode;
@@ -44,7 +47,10 @@ export default function App({ Component, pageProps }: FixedAppProps) {
       <Head>
         <title>Willian Almeida</title>
       </Head>
-      <main className={`h-full ${neueMontreal.variable} font-NeueMontreal`}>
+      <WavesBG />
+      <main
+        className={`relative p-3 h-full z-20 ${neueMontreal.variable} font-NeueMontreal`}
+      >
         {getLayout(<Component {...pageProps} />)}
       </main>
     </AnimatePresence>

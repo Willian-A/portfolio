@@ -6,15 +6,8 @@ export default function Document() {
       <Head />
       <body className="bg-black h-full absolute w-full flex justify-center items-center">
         <section
-          className={`
-                p-3 
-                h-[calc(100%-theme(space.4)-theme(space.3))] 
-                w-[calc(100%-theme(space.4)-theme(space.3))] 
-                border 
-                border-solid 
-                border-white-500 
-                bg-page bg-cover 
-                bg-no-repeat`}
+          id="root-section"
+          className="h-[calc(100%-theme(space.4)-theme(space.3))] w-[calc(100%-theme(space.4)-theme(space.3))] border border-solid border-white-500"
         >
           <Main />
           <NextScript />

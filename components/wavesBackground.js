@@ -63,7 +63,7 @@ export const WavesBG = () => {
         ),
         sunDirection: new THREE.Vector3(),
         sunColor: 0xffffff,
-        waterColor: new THREE.Color("#344ceb"),
+        waterColor: new THREE.Color("#a8b4ff"),
         distortionScale: 3.7,
         fog: scene.fog !== undefined,
       });
@@ -146,5 +146,5 @@ export const WavesBG = () => {
     // Cleanup on unmount, otherwise stuff will linger in GPU
   }, []);
 
-  return <div id="container" className="absolute z-10 opacity-25"></div>;
+  return <div id="container" className="absolute z-10 opacity-50"></div>;
 };

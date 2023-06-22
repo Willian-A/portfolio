@@ -63,7 +63,7 @@ export const WavesBG = () => {
         ),
         sunDirection: new THREE.Vector3(),
         sunColor: 0xffffff,
-        waterColor: new THREE.Color("#0d1112"),
+        waterColor: new THREE.Color("#344ceb"),
         distortionScale: 3.7,
         fog: scene.fog !== undefined,
       });

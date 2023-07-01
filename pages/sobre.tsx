@@ -1,6 +1,7 @@
 import Default from "../layouts/Default";
 import { ReactElement, useRef } from "react";
 import ReadMore from "@/components/readMore";
+import { ListItem } from "@/components/listItem";
 
 export default function Sobre() {
   const ReadMoreFunctions = useRef<{ changeHelperTextOpacity: VoidFunction }>(
@@ -24,61 +25,49 @@ export default function Sobre() {
         <div className="h-full overflow-y-scroll">
           <div className="mr-3">
             <p className="mb-3">
-              Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris
-              que eu tomo, mas ninguém vê os tombis que eu levo!Si num tem leite
-              então bota uma pinga aí cumpadi!Nullam volutpat risus nec leo
-              commodo, ut interdum diam laoreet. Sed non consequat
-              odio.Delegadis gente finis, bibendum egestas augue arcu ut est. Si
-              u mundo tá muito paradis?
-            </p>
-            <p className="mb-6">
-              Toma um mé que o mundo vai girarzis!Viva Forevis aptent taciti
-              sociosqu ad litora torquent.Copo furadis é disculpa de bebadis,
-              arcu quam euismod magna.Admodum accumsan disputationi eu sit. Vide
-              electram sadipscing et per.
+              Nesta seção, você encontrará um resumo sobre a minha jornada de
+              estudante e profissional na área de Desenvolvimento Web, desde
+              minha formação até as experiências que moldaram minha carreira.
+              Conheça um pouco mais sobre mim e como cheguei até aqui.
             </p>
             <div>
-              <h2>Nec orci ornare consequat:</h2>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
+              <h2>Experiências e formações:</h2>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper text="De 09/20 à 02/24" />
+              </ListItem.Root>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper text="De 09/20 à 02/24" />
+              </ListItem.Root>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper text="De 09/20 à 02/24" />
+              </ListItem.Root>
             </div>
           </div>
         </div>

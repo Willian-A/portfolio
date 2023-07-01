@@ -146,5 +146,5 @@ export const WavesBG = () => {
     // Cleanup on unmount, otherwise stuff will linger in GPU
   }, []);
 
-  return <div id="container" className="absolute z-10 opacity-50"></div>;
+  return <div id="container" className="absolute z-10 opacity-25"></div>;
 };

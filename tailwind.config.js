@@ -26,9 +26,6 @@ module.exports = {
       6: "48px",
     },
     extend: {
-      fontFamily: {
-        NeueMontreal: ["var(--font-neueMontreal)"],
-      },
       backgroundImage: {
         page: "url('/background.png')",
       },

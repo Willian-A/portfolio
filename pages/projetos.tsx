@@ -1,6 +1,7 @@
 import Default from "../layouts/Default";
 import { ReactElement, useRef } from "react";
 import ReadMore from "@/components/readMore";
+import { ListItem } from "@/components/listItem";
 
 export default function Projetos() {
   const ReadMoreFunctions = useRef<{ changeHelperTextOpacity: VoidFunction }>(
@@ -24,47 +25,55 @@ export default function Projetos() {
         <div className="h-full overflow-scroll">
           <div className="mr-3">
             <div>
-              <h2>Nec orci ornare consequat:</h2>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
-              <div className="mt-4">
-                <h3 className="mb-2">Manduma pindureta</h3>
-                <p className="mb-1">
-                  Mussum Ipsum, cacilds vidis litro abertis. A ordem dos
-                  tratores não altera o pão duris
-                </p>
-                <p className="font-medium text-white-500">
-                  Nec orci ornare consequat
-                </p>
-              </div>
+              <h2>Projetos que já realizei:</h2>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper type="link" text="https://mussumipsum.com/" />
+              </ListItem.Root>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper type="link" text="https://mussumipsum.com/" />
+              </ListItem.Root>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper type="link" text="https://mussumipsum.com/" />
+              </ListItem.Root>
+              <ListItem.Root>
+                <ListItem.Title text="Pra lá , depois divoltis porris, paradis" />
+                <ListItem.Description
+                  text={`Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os
+                  porris que eu tomo, mas ninguém vê os tombis que eu
+                  levo!Mauris nec dolor in eros commodo tempor. Aenean aliquam
+                  molestie leo, vitae iaculis nisl.Aenean aliquam molestie leo,
+                  vitae iaculis nisl.Praesent malesuada urna nisi, quis volutpat
+                  erat hendrerit non. Nam vulputate dapibus.`}
+                />
+                <ListItem.Helper type="link" text="https://mussumipsum.com/" />
+              </ListItem.Root>
             </div>
           </div>
         </div>

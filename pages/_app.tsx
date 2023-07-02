@@ -56,3 +56,9 @@ export default function App({ Component, pageProps }: FixedAppProps) {
     </AnimatePresence>
   );
 }
+
+export const getStaticProps = async () => {
+  return {
+    props: {},
+  };
+};

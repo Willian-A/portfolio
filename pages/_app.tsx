@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 import type { AppProps } from "next/app";
-import localFont from "next/font/local";
 import { AnimatePresence } from "framer-motion";
 
 import "@/styles/globals.css";
@@ -18,27 +17,6 @@ type FixedAppProps = AppProps & {
   Component: Page;
 };
 
-const neueMontreal = localFont({
-  src: [
-    {
-      path: "../static/fonts/NeueMontreal-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../static/fonts/NeueMontreal-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../static/fonts/NeueMontreal-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  variable: "--font-neueMontreal",
-});
-
 export default function App({ Component, pageProps }: FixedAppProps) {
   const getLayout = Component.getLayout ?? ((page: ReactNode) => page);
 
@@ -48,9 +26,7 @@ export default function App({ Component, pageProps }: FixedAppProps) {
         <title>Willian Almeida</title>
       </Head>
       <WavesBG />
-      <main
-        className={`relative p-3 h-full z-20 ${neueMontreal.variable} font-NeueMontreal`}
-      >
+      <main className={`relative p-3 h-full z-20`}>
         {getLayout(<Component {...pageProps} />)}
       </main>
     </AnimatePresence>

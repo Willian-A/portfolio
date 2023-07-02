@@ -7,8 +7,6 @@ import { useEffect } from "react";
 
 export const WavesBG = () => {
   useEffect(() => {
-    console.log("a");
-
     let container, mainContainer;
     let camera, scene, renderer;
     let controls, water, sun;

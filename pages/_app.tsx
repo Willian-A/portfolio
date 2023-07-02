@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: FixedAppProps) {
       <Head>
         <title>Willian Almeida</title>
       </Head>
-      <WavesBG />
+      {/*<WavesBG />*/}
       <main
         className={`relative p-3 h-full z-20 ${neueMontreal.variable} font-NeueMontreal`}
       >

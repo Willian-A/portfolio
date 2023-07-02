@@ -14,7 +14,7 @@ export default function Default({ children, navBar }: DefaultProps) {
     <div className="h-full grid gap-5 grid-rows-3 grid-cols-3">
       <aside className="row-span-2 grid gap-5 grid-rows-3 grid-cols-3">
         <div className="col-span-3">
-          <h1>Willian Almeida</h1>
+          <h1 className="mb-1">Willian Almeida</h1>
           <p className="font-normal">Desenvolvedor Front-end</p>
         </div>
         <nav className="flex flex-col">

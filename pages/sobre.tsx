@@ -24,7 +24,7 @@ export default function Sobre() {
       >
         <div className="h-full overflow-y-scroll">
           <div className="mr-3">
-            <p className="mb-3">
+            <p className="mb-6">
               Nesta seção, você encontrará um resumo sobre a minha jornada de
               estudante e profissional na área de Desenvolvimento Web, desde
               minha formação até as experiências que moldaram minha carreira.

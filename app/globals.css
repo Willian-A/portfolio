@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.default-container {
+  @apply p-4 sm:p-4;
+}
+
+.glass {
+  @apply bg-zinc-900/50 backdrop-blur-md;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+h2 {
+  @apply text-2xl font-semibold;
+}
+
+h4 {
+  @apply text-sm font-semibold;
+}
+
+p {
+  @apply text-sm;
+}
+
+p.description {
+  @apply text-zinc-500;
+}
+
+a {
+  @apply underline-offset-4 hover:underline;
+}

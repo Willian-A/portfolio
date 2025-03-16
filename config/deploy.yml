@@ -1,10 +1,10 @@
 <% require "dotenv"; Dotenv.load(".kamal/secrets") %>
 
 # Name of your application. Used to uniquely configure containers.
-service: hefestos-boilerplate
+service: portfolio
 
 # Name of the container image.
-image: willianalmeida/hefestos-boilerplate
+image: willianalmeida/portfolio
 
 env:
   secret:
@@ -41,7 +41,7 @@ builder:
   # cache:
   #   type: registry
   #   options: mode=max
-  #   image: willianalmeida/hefestos-boilerplate-cache
+  #   image: willianalmeida/portfolio-cache
 
 asset_path: /app/.next
 # Deploy to these servers.

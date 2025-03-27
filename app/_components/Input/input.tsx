@@ -5,17 +5,20 @@ import { cn } from "@/lib/utils";
 export type InputProps = React.ComponentProps<"input">;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type, placeholder, ...props }, ref) => {
     return (
-      <input
-        type={type}
-        className={cn(
-          "flex h-9 w-full rounded-md border border-neutral-200 bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-neutral-950 placeholder:text-neutral-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:border-neutral-800 dark:file:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus-visible:ring-neutral-300",
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
+      <>
+        <label className="text-text-tertiary mb-1">{placeholder}</label>
+        <input
+          type={type}
+          className={cn(
+            "flex w-full rounded border border-section-primary bg-transparent px-4 py-3 text-xl text-text-tertiary transition-colors placeholder:text-text-tertiary focus-visible:outline-none focus-visible:border-accent disabled:cursor-not-allowed disabled:opacity-50",
+            className
+          )}
+          ref={ref}
+          {...props}
+        />
+      </>
     );
   }
 );

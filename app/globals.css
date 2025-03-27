@@ -8,41 +8,32 @@
   }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 .default-container {
   @apply p-4 sm:p-4;
 }
 
 .glass {
-  @apply bg-zinc-900/50 backdrop-blur-md;
+  @apply backdrop-blur-md;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  @apply text-text-primary font-sans;
 }
 
 h2 {
+  @apply text-3xl font-semibold text-text-primary;
+}
+
+h3 {
   @apply text-2xl font-semibold;
 }
 
 h4 {
-  @apply text-sm font-semibold;
+  @apply text-base font-semibold;
 }
 
 p {
-  @apply text-sm;
+  @apply text-base leading-[1.2] font-normal;
 }
 
 p.description {
@@ -50,5 +41,9 @@ p.description {
 }
 
 a {
-  @apply underline-offset-4 hover:underline;
+  @apply hover:text-accent;
+}
+
+b {
+  @apply font-bold;
 }

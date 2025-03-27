@@ -9,9 +9,23 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        tt_interphases: ["var(--font-tt-interphases-pro)"],
+        vcr: ["var(--font-vcr-osd-mono)"],
+        tt_interphases_mono: ["var(--font-tt-interphases-pro-mono)"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        transparent: "transparent",
+        page: "#F6F6F6",
+        section: { primary: "#FDF8EE", secondary: "#00100B" },
+        accent: "#CCFF00",
+        "accent-contrast": "#2B34F5",
+        text: {
+          primary: "#001910",
+          secondary: "#4C5162",
+          tertiary: "#F6F6F6",
+          accent: { light: "#8D9899", dark: "#EBC390" },
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

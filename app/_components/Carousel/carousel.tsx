@@ -41,7 +41,7 @@ function useCarousel() {
 
   return context;
 }
-
+// teste
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps

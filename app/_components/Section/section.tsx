@@ -109,7 +109,7 @@ const Section = ({
         <p
           className={cn(
             variant === "dark" ? "text-accent" : "text-text-secondary",
-            "font-medium mb-4"
+            "font-medium mb-5"
           )}
         >
           # {description}

@@ -6,11 +6,6 @@ service: portfolio
 # Name of the container image.
 image: willianalmeida/portfolio
 
-env:
-  secret:
-    - SPOTIFY_CLIENT_ID
-    - SPOTIFY_CLIENT_SECRET
-
 servers:
   web:
     hosts:

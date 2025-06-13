@@ -99,33 +99,33 @@ export default function Home() {
     <div>
       <Navbar
         navigationItems={[
-          { label: "home", href: "/" },
+          { label: "home", href: null },
           { label: "sobre mim", href: "#sobre-mim" },
           { label: "projetos", href: "#projetos" },
           { label: "tecnologias", href: "#tecnologias" },
           { label: "contato", href: "#contato" },
         ]}
       />
-      <main className="ml-24 grid grid-cols-3 gap-8 overflow-x-show">
+      <main className="md:ml-20 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 overflow-x-show">
         <span className="absolute right-[5%] top-[35%] bg-accent rounded-3xl w-[165px] h-[285px]"></span>
-        <span className="absolute left-[45%] -bottom-[98vh] bg-accent rounded-3xl w-[235px] h-[235px]"></span>
-        <span className="absolute left-[6%] -bottom-[83vh] text-text-accent-light text-3xl font-bold">
+        <span className="absolute -left-[5%] md:left-[45%] -bottom-[190%] md:-bottom-[58vh] bg-accent rounded-3xl w-[235px] h-[235px]"></span>
+        <span className="hidden md:block absolute left-[5.5%] opacity-50 -bottom-[55vh] text-text-accent-light text-3xl font-bold">
           security protocol 1459-3 101
         </span>
-        <div className="col-span-2 flex flex-col gap-8">
-          <div>
-            <h1 className="font-semibold text-5xl">willian de almeida</h1>
+        <div className="col-span-2 flex flex-col gap-4 md:gap-8">
+          <div className="p-2 md:p-0">
+            <h1 className="font-semibold text-4xl">willian de almeida</h1>
             <p className="text-text-secondary font-medium text-xl">
               # desenvolvedor web
             </p>
           </div>
           <Section
-            className="h-[300px] p-0"
+            className="h-[300px] p-0 md:p-0 rounded-none md:rounded-2xl"
             variant="dark"
             showVersionTag={false}
           >
-            <div className="p-4 pl-8 absolute top-6 -left-4 bg-accent/75 glass rounded-3xl z-40">
-              <div className="max-w-[550px]">
+            <div className="p-4 md:pl-8 absolute top-6 md:-left-4 bg-accent/75 glass rounded-none z-40 md:rounded-2xl">
+              <div className="md:max-w-[550px]">
                 <p className="mb-4">
                   Olá, eu sou o <b>Willian, desenvolvedor web</b> focado na área
                   de <b>front-end</b>. Apesar do foco em front-end, já trabalhei
@@ -140,7 +140,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative w-full h-full p-4 flex justify-end items-end text-right rounded-3xl overflow-hidden z-10 opacity-75">
+            <div className="relative w-full h-full p-4 flex justify-end items-end text-right rounded-none overflow-hidden z-10 opacity-75 md:rounded-2xl">
               <p className="relative z-40 text-text-accent-dark leading-[1.5] text-xs font-tt_interphases_mono">
                 Message-Id:{" "}
                 {`<3.0.6.32.19990707142016.007ab5d0@mail.bungie.com>`} <br />
@@ -217,15 +217,15 @@ export default function Home() {
             title="projetos"
             description="projetos que já trabalhei ou fiz parte"
             id="projetos"
-            className="relative"
+            className="section relative"
           >
             <Tabs defaultValue="Project 1" className="mt-4">
-              <TabsList className="w-full gap-2">
+              <TabsList className="w-full gap-1 md:gap-2">
                 {PROJECT_LIST.map((project) => (
                   <TabsTrigger
                     key={project.id}
                     value={project.name}
-                    className="relative mb-2 w-full h-60 transition-opacity sm:size-60 md:size-44 lg:size-52"
+                    className="relative mb-2 transition-opacity"
                   >
                     <img
                       className="rounded"
@@ -253,9 +253,10 @@ export default function Home() {
             </Tabs>
           </Section>
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="col-span-2 md:col-span-1 gap-4 md:gap-8 flex flex-col">
           <CMD />
           <Section
+            className="section"
             title="tecnologias"
             description="tecnologias e ferramentas que já  utilizei"
             id="tecnologias"
@@ -273,7 +274,12 @@ export default function Home() {
               ))}
             </div>
           </Section>
-          <Section title="contato" variant="dark" id="contato">
+          <Section
+            className="section"
+            title="contato"
+            variant="dark"
+            id="contato"
+          >
             <p className="text-accent mb-4">
               # gostou do que viu? <br />
               # quer conversar sobre algo? <br />

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const sectionVariants = cva("z-30 flex flex-col rounded-3xl p-6 glass", {
+const sectionVariants = cva("z-30 flex flex-col rounded-2xl p-4 md:p-6 glass", {
   variants: {
     variant: {
       default: "bg-section-primary/60",
@@ -89,7 +89,7 @@ const Section = ({
       {showVersionTag && (
         <span
           className={cn(
-            "absolute text-xs w-max h-max font-bold p-2 rounded-sm text-text-tertiary bg-accent-contrast"
+            "absolute text-[10px] md:text-xs w-max h-max font-bold p-1 rounded-sm text-text-tertiary bg-accent-contrast z-50"
           )}
           style={{
             top: randomVersionPosition.top,

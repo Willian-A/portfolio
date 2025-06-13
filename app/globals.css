@@ -47,3 +47,7 @@ a {
 b {
   @apply font-bold;
 }
+
+.section {
+  @apply mx-2 md:mx-0;
+}

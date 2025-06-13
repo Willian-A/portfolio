@@ -135,7 +135,7 @@ export const CMD = () => {
   return (
     <Section
       variant="dark"
-      className="h-[400px] overflow-hidden"
+      className="hidden md:block h-[400px] overflow-hidden"
       showVersionTag={false}
     >
       <div className="text-text-accent-dark text-[10px] font-tt_interphases_mono">

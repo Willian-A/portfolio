@@ -90,7 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ttInterphasesPro.variable} ${VCR_OSD_MONO.variable} ${ttInterphasesProMono.variable} bg-page p-4 mb-24`}
+        className={`${ttInterphasesPro.variable} ${VCR_OSD_MONO.variable} ${ttInterphasesProMono.variable} bg-page mb-4 md:p-4`}
       >
         {children}
       </body>

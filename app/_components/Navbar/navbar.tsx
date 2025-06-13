@@ -2,13 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 const navbarVariants = cva(
-  "z-40 flex flex-col items-center justify-start gap-10 text-sm transition-colors px-6 py-8 font-vcr font-normal text-text-tertiary bg-section-secondary/90",
+  "z-40 hidden md:flex flex-col items-center justify-start gap-10 text-base transition-colors px-3 py-8 font-vcr font-normal text-text-tertiary bg-section-secondary/90",
   {
     variants: {
       variant: {
@@ -27,21 +28,32 @@ export interface NavbarProps
     VariantProps<typeof navbarVariants> {
   navigationItems: {
     label: string;
-    href: string;
+    href: string | null;
   }[];
 }
 
 const Navbar = ({ navigationItems, variant, className }: NavbarProps) => {
-  const pathName = usePathname();
+  const [anchor, setAnchor] = useState("");
+  const searchParams = useSearchParams();
+  const currentSection = searchParams.get("section");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const anchor = window.location.hash;
+      setAnchor(anchor);
+    }
+  }, []);
 
   return (
     <nav className={cn(navbarVariants({ variant, className }))}>
       {navigationItems.map((link, index) => (
         <Link
           key={`navbar-link-${index}`}
-          href={link.href}
+          href={{ query: { section: link.href }, hash: link.href }}
           className={cn(
-            pathName === link.href && " text-accent",
+            (currentSection === link.href ||
+              (!currentSection && index === 0)) &&
+              " text-accent",
             "[writing-mode:sideways-lr] mr-1"
           )}
         >

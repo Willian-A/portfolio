@@ -16,7 +16,7 @@ export default {
       },
       colors: {
         transparent: "transparent",
-        page: "#F6F6F6",
+        page: "#EEECE5",
         section: { primary: "#FDF8EE", secondary: "#00100B" },
         accent: "#CCFF00",
         "accent-contrast": "#2B34F5",

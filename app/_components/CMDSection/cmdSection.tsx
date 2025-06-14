@@ -75,7 +75,7 @@ Status: PARTIALLY OPERATIONAL | SECURITY COMPROMISED
 "In the neon glow, we thrive. In the shadows, we survive."
 `;
 
-export const CMD = () => {
+export const CMDSection = () => {
   const lines = logMessages.trim().split("\n");
 
   const result = lines.map((line) => {

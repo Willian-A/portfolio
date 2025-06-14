@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 const navbarVariants = cva(
-  "z-40 hidden md:flex flex-col items-center justify-start gap-10 text-base transition-colors px-3 py-8 font-vcr font-normal text-text-tertiary bg-section-secondary/90",
+  "z-40 hidden md:flex flex-col items-center justify-start gap-10 text-base transition-colors px-6 py-8 font-vcr font-normal text-text-tertiary bg-section-secondary/90",
   {
     variants: {
       variant: {

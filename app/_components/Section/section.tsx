@@ -2,19 +2,23 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { useMemo } from "react";
 
-const sectionVariants = cva("z-30 flex flex-col rounded-2xl p-4 md:p-6 glass", {
-  variants: {
-    variant: {
-      default: "bg-section-primary/60",
-      dark: "bg-section-secondary/90",
+const sectionVariants = cva(
+  "z-30 flex flex-col rounded-2xl p-4 md:p-6 glass relative z-10",
+  {
+    variants: {
+      variant: {
+        default: "bg-section-primary/60",
+        dark: "bg-section-secondary/90",
+      },
     },
-  },
 
-  defaultVariants: {
-    variant: "default",
-  },
-});
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
 
 export interface SectionProps
   extends React.HTMLAttributes<HTMLElement>,
@@ -82,7 +86,8 @@ const Section = ({
     return { top, left, rotate };
   };
 
-  const randomVersionPosition = generateRandomPosition();
+  const randomVersionPosition = useMemo(() => generateRandomPosition(), []);
+  const randomVersion = useMemo(() => generateRandomVersion(), []);
 
   return (
     <section className={cn(sectionVariants({ variant, className }))} {...rest}>
@@ -97,7 +102,7 @@ const Section = ({
             writingMode: randomVersionPosition.rotate,
           }}
         >
-          {generateRandomVersion()}
+          {randomVersion}
         </span>
       )}
       {title && (

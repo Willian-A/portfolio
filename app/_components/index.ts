@@ -9,5 +9,7 @@ export * from "./Card";
 export * from "./Accordion";
 export * from "./Skeleton";
 export * from "./Section";
-export * from "./CMD";
+export * from "./CMDSection";
 export * from "./Tabs";
+export * from "./AnimateSection";
+export * from "./ProjectsSection";

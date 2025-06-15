@@ -1,15 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ReactNode, useEffect, useState } from "react";
 
-interface AnimateSection {
+interface AnimateSectionProps {
   children: ReactNode;
   time?: number;
 }
 
-export const AnimateSection = ({ children, time = 1000 }: AnimateSection) => {
+export const AnimateSection = ({
+  children,
+  time = 1000,
+}: AnimateSectionProps) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {

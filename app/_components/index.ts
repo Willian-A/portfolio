@@ -12,4 +12,5 @@ export * from "./Section";
 export * from "./CMDSection";
 export * from "./Tabs";
 export * from "./AnimateSection";
+export * from "./AnimateContent";
 export * from "./ProjectsSection";

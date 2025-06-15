@@ -6,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
 
 const navbarVariants = cva(
   "z-40 hidden md:flex flex-col items-center justify-start gap-10 text-base transition-colors px-6 py-8 font-vcr font-normal text-text-tertiary bg-section-secondary/90",
@@ -33,16 +32,8 @@ export interface NavbarProps
 }
 
 const Navbar = ({ navigationItems, variant, className }: NavbarProps) => {
-  const [anchor, setAnchor] = useState("");
   const searchParams = useSearchParams();
   const currentSection = searchParams.get("section");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const anchor = window.location.hash;
-      setAnchor(anchor);
-    }
-  }, []);
 
   return (
     <nav className={cn(navbarVariants({ variant, className }))}>

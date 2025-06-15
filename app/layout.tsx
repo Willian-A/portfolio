@@ -9,9 +9,9 @@ import {
 } from "./_contants/fonts";
 
 export const metadata: Metadata = {
-  title: "Hefestos Boilerplate",
+  title: "Willian - Desenvolvedor Web Front-end & Full-stack",
   description:
-    "A boilerplate with build-in components and custom design builded with Next.js and TailwindCSS",
+    "Desenvolvedor web com 4+ anos de experiência, especializado em front-end e soluções completas (React, Node.js, MySQL). Apaixonado por resolver problemas, otimizar workflows (GitHub Actions, VPS) e manter equipes produtivas e descontraídas. Foco em entregas estratégicas, documentação clara e escolha inteligente de tecnologias para atingir objetivos.",
 };
 
 export default function RootLayout({

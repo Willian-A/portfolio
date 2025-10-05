@@ -2,52 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
+h1 {
+  @apply text-4xl font-bold;
 }
-
-.default-container {
-  @apply p-4 sm:p-4;
-}
-
-.glass {
-  @apply backdrop-blur-md;
-}
-
-body {
-  @apply text-text-primary font-sans;
-}
-
 h2 {
-  @apply text-3xl font-semibold text-text-primary;
+  @apply text-2xl font-medium;
 }
-
 h3 {
-  @apply text-2xl font-semibold;
+  @apply text-xl font-medium;
+}
+h4 {
+  @apply text-lg font-medium;
+}
+p {
+  @apply text-base;
+  font-family: var(--ibm-plex-sans);
 }
 
-h4 {
-  @apply text-base font-semibold;
+h1,
+h2,
+h3,
+h4,
+a {
+  @apply text-text-primary uppercase;
+  font-family: var(--ibm-plex-mono);
 }
 
 p {
-  @apply text-base leading-[1.2] font-normal;
+  @apply text-text-400;
 }
 
-p.description {
-  @apply text-zinc-500;
+button {
+  font-family: var(--ibm-plex-mono);
+}
+
+button.primary {
+  @apply clip-path-button bg-accent-primary py-2 px-3 rounded-sm uppercase font-semibold text-bg-primary;
 }
 
 a {
-  @apply hover:text-accent;
+  @apply cursor-pointer;
 }
 
-b {
-  @apply font-bold;
-}
-
-.section {
-  @apply mx-2 md:mx-0;
+.clip-path-button {
+  clip-path: polygon(
+    0% 0%,
+    /* canto superior esquerdo */ 100% 0%,
+    /* canto superior direito */ 100% 70%,
+    /* ponto de corte direito */ 90% 100%,
+    /* canto inferior direito */ 0% 100% /* canto inferior esquerdo */
+  );
 }

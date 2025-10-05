@@ -15,22 +15,22 @@ export default {
         tt_interphases_mono: ["var(--font-tt-interphases-pro-mono)"],
       },
       colors: {
-        transparent: "transparent",
-        page: "#EEECE5",
-        section: { primary: "#FDF8EE", secondary: "#00100B" },
-        accent: "#CCFF00",
-        "accent-contrast": "#2B34F5",
-        text: {
-          primary: "#001910",
-          secondary: "#4C5162",
-          tertiary: "#F6F6F6",
-          accent: { light: "#8D9899", dark: "#EBC390" },
+        bg: {
+          primary: "#010101",
+          900: "#09090B",
+          600: "#353537",
+          500: "#636262",
+          400: "#CFCFD1",
         },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        accent: { primary: "#47E671", dark: "#2B814C", light: "#3AF572" },
+        text: {
+          primary: "#EDEDEF",
+          400: "#CFCFD1",
+          500: "#9C9C9E",
+          600: "#625F5F",
+        },
+        success: "#61C225",
+        error: "#D80925",
       },
       keyframes: {
         "accordion-down": {

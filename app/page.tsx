@@ -1,205 +1,245 @@
-import Image from "next/image";
+import clsx from "clsx";
+import { NavLink } from "./_components/navLink";
 
-import {
-  AnimateContent,
-  AnimateSection,
-  Button,
-  CMDSection,
-  Input,
-  ProjectsSection,
-  Section,
-} from "@/components";
+import { NavLinkPaths } from "./_shared/_types/pathNames";
 
-import { TECH_ICONS } from "./_contants/techIcons";
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ path: NavLinkPaths }>;
+}) {
+  const path = (await searchParams).path;
 
-export default function Home() {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 overflow-x-show">
-      <div className="col-span-2 flex flex-col gap-4 md:gap-8">
-        <div className="w-fit p-2 md:p-0">
-          <AnimateContent
-            className="flex text-nowrap overflow-hidden"
-            animation="write"
-            repeat={false}
-            delay={1}
-          >
-            <h1 className="font-semibold text-4xl">willian de almeida</h1>
-          </AnimateContent>
-          <AnimateContent
-            className="flex text-nowrap overflow-hidden"
-            animation="write"
-            repeat={false}
-            delay={1.5}
-          >
-            <p className="text-text-secondary font-medium text-xl">
-              # desenvolvedor web
-            </p>
-          </AnimateContent>
+    <div className="relative grid grid-cols-10 grid-rows-12 h-[96vh] w-full bg-bg-900/80 border border-bg-600 m-auto">
+      <div className="absolute z-50 -top-1 -left-1">
+        <div className="w-4 h-0.5 bg-bg-400"></div>
+        <div className="w-0.5 h-4 bg-bg-400"></div>
+      </div>
+
+      <div className="absolute z-50 -top-1 -right-1 flex flex-col items-end">
+        <div className="w-4 h-0.5 bg-bg-400"></div>
+        <div className="w-0.5 h-4 bg-bg-400"></div>
+      </div>
+
+      <div className="absolute z-50 -bottom-1 -left-1 flex flex-col">
+        <div className="w-0.5 h-4 bg-bg-400"></div>
+        <div className="w-4 h-0.5 bg-bg-400"></div>
+      </div>
+
+      <div className="absolute z-50 -bottom-1 -right-1 flex flex-col items-end">
+        <div className="w-0.5 h-4 bg-bg-400"></div>
+        <div className="w-4 h-0.5 bg-bg-400"></div>
+      </div>
+      <header className="border-b border-bg-600 col-span-10 row-span-1 w-full px-6 flex items-center">
+        <div className="flex items-center gap-4">
+          <h2 className="">Lorem ipsum dolor sit amet</h2>
+          <h2 className="text-text-600">/</h2>
+          <h2 className="text-text-600">Lorem ipsum dolor sit amet</h2>
         </div>
-        <AnimateSection>
-          <Section
-            className="h-[300px] p-0 md:p-0 rounded-none md:rounded-2xl"
-            variant="dark"
-            showVersionTag={false}
-          >
-            <div className="p-4 md:pl-8 absolute top-6 md:-left-4 bg-accent/75 glass rounded-none z-40 md:rounded-2xl">
-              <div className="md:max-w-[550px]">
-                <p className="mb-4">
-                  Olá, eu sou o <b>Willian, desenvolvedor web</b> focado na área
-                  de <b>front-end</b>. Apesar do foco em front-end, já trabalhei
-                  como <b>desenvolvedor full-stack</b>.
-                </p>
-                <p>
-                  Sou extremamente <b>curioso</b> e não largo problemas e bugs{" "}
-                  <b>até que sejam resolvidos.</b> Além disso, costumo ser a
-                  pessoa que deixa o clima das reuniões mais leve e
-                  descontraído, tudo isso sem tirar o profissionalismo da
-                  conversa.
-                </p>
-              </div>
-            </div>
-            <div className="relative w-full h-full p-4 flex justify-end items-end text-right rounded-none overflow-hidden z-10 opacity-75 md:rounded-2xl">
-              <p className="relative z-40 text-text-accent-dark leading-[1.5] text-xs font-tt_interphases_mono">
-                Message-Id:{" "}
-                {`<3.0.6.32.19990707142016.007ab5d0@mail.bungie.com>`} <br />
-                X-Sender: cortana@mail.bungie.com (Unverified)
-                <br /> X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6
-                (32)
-                <br /> Date: Wed, 07 Jul 1999 14:20:16 -0500 <br />
-                To: Hamish.Sinclair@tcd.ie From: Cortana{" "}
-                {`<cortana@bungie.com>`}
-                <br />
-                Subject: Cortana Saves Sinners! (And Redeems Them for Valuable
-                Cash Prizes)
-                <br /> Mime-Version: 1.0 Content-Type: text/plain;
-                {`charset="us-ascii"`} <br />
-                X-UIDL: c6a5409b6a9998aa957a76a002e5df09
-              </p>
-              <Image
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                src="/bg.gif"
-                alt="background"
-                fill
-              />
-            </div>
-          </Section>
-        </AnimateSection>
-        <AnimateSection time={1250}>
-          <Section
-            title="sobre mim"
-            description="um pouco mais sobre mim"
-            className="text-text-secondary"
-            id="sobre-mim"
-          >
-            <p className="mb-4">
-              Trabalho como <b>desenvolvedor web há mais de quatro anos.</b>{" "}
-              Tenho conhecimentos sobre{" "}
-              <b>
-                padrões de código, gestão de entregas, arquitetura de software,
-                testes end-to-end, configuração de servidores, pipelines com
-                GitHub Actions, configuração de VPS
-              </b>{" "}
-              e outros.
-            </p>
-            <p className="mb-4">
-              Já trabalhei como <b>fullstack</b> utilizando{" "}
-              <b>React, Node.js e MySQL</b> na criação de sites para o cadastro
-              do público em eventos. Atualmente, trabalho como desenvolvedor
-              front-end, mas atuo em todas as áreas do{" "}
-              <b>
-                desenvolvimento, desde o planejamento, desenvolvimento e
-                coordenação até a entrega de features para o cliente e correções
-                pós-entrega.
-              </b>{" "}
-              Também costumo ser a pessoa que mantém a equipe descontraída, já
-              que gosto de conversar sobre assuntos aleatórios, curiosidades e
-              bobeiras.
-            </p>
-            <p className="mb-4">
-              Acredito que o{" "}
-              <b>desenvolvimento deve ser feito com um objetivo;</b> portanto,{" "}
-              <b>as tecnologias são apenas meios para esse objetivo.</b> Para
-              mim,{" "}
-              <b>
-                pouco importa a linguagem ou framework, desde que sejam a melhor
-                escolha e facilitem o trabalho para antingir objetivos e
-                resolver as demandas. Tecnologias são apenas meios para esse
-                objetivo definido.
-              </b>{" "}
-              Além disso, acredito fortemente que a{" "}
-              <b>
-                documentação das decisões do time e autonomia da equipe, desde
-                designers, devs, QAs e POs,
-              </b>{" "}
-              são a chave para garantir uma boa entrega.
-            </p>
-          </Section>
-        </AnimateSection>
-        <div className="relative">
-          <AnimateSection time={1500}>
-            <span className="hidden z-10 md:flex gap-2 items-center absolute -left-2 -bottom-12 w-fit">
-              <AnimateContent
-                className="relative text-text-accent-light text-3xl font-bold text-nowrap overflow-hidden"
-                animation="write"
-                repeatDelay={10}
+      </header>
+      <main className="flex flex-col gap-8 col-span-7 row-span-10 p-6">
+        {(path === "about" || path === "knowledge") && (
+          <>
+            <div className="flex flex-col gap-3 mb-8">
+              <h2
+                className={clsx("transition-colors duration-300", {
+                  "text-accent-primary": path === "about",
+                })}
               >
-                security protocol 1459-3 101
-              </AnimateContent>
-            </span>
-            <span className="absolute left-8 md:left-12 -top-20 bg-accent rounded-2xl w-16 md:w-16 h-32 md:h-64" />
-            <span className="absolute right-20 md:-right-20 -top-16 md:top-64 bg-accent rounded-xl w-4 md:w-64 h-24 md:h-12" />
-            <ProjectsSection />
-          </AnimateSection>
-        </div>
-      </div>
-      <div className="col-span-2 md:col-span-1 gap-4 md:gap-8 flex flex-col">
-        <AnimateSection>
-          <CMDSection />
-        </AnimateSection>
-        <div className="relative">
-          <AnimateSection time={1250}>
-            <span className="absolute z-0 right-8 -top-20 bg-accent rounded-3xl w-24 h-40"></span>
-            <Section
-              className="section"
-              title="tecnologias"
-              description="tecnologias e ferramentas que já  utilizei"
-              id="tecnologias"
-            >
-              <div className="grid grid-cols-4 gap-4">
-                {TECH_ICONS.map((icon) => (
-                  <Image
-                    key={icon}
-                    src={`/tech_icons/${icon}.svg`}
-                    alt={icon}
-                    className="m-auto hover:scale-110 transition-all"
-                    height={64}
-                    width={64}
-                  />
-                ))}
+                /quem sou eu
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum fermentum congue urna sed pretium. Nam id tortor
+                ipsum. Nunc nibh ex, interdum sed tortor nec, luctus vehicula
+                neque. Vestibulum a neque erat. Class aptent taciti sociosqu ad
+                litora torquent per conubia nostra, per inceptos himenaeos.
+                Vestibulum accumsan tortor sed mi condimentum, at lobortis elit
+                faucibus. Mauris hendrerit consectetur elementum. In pretium,
+                ipsum ac molestie elementum, sem ex imperdiet nulla, sit amet
+                bibendum leo ante at ante. Sed pellentesque tellus id quam
+                vestibulum, eu lobortis libero ornare. Etiam sed porttitor quam.
+                Praesent faucibus nisl vitae consectetur placerat. Mauris
+                rhoncus sem mi, nec placerat erat varius ut. Ut non felis sed
+                sem maximus tincidunt sed eget nisl. Phasellus scelerisque metus
+                nec lectus viverra ultrices aliquet dapibus nibh. Nulla suscipit
+                lorem gravida tempor venenatis. Vivamus vehicula mollis quam, ut
+                ultricies lectus lobortis at. In consequat leo ac libero egestas
+                laoreet auctor quis libero. Aliquam efficitur blandit urna quis
+                suscipit. Nulla a molestie lectus, sit amet ultrices arcu. Ut
+                rhoncus orci porta nunc lobortis tincidunt.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 mb-8">
+              <h2
+                className={clsx("transition-colors duration-300", {
+                  "text-accent-primary": path === "knowledge",
+                })}
+              >
+                /Meus conhecimentos
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum fermentum congue urna sed pretium. Nam id tortor
+                ipsum. Nunc nibh ex, interdum sed tortor nec, luctus vehicula
+                neque. Vestibulum a neque erat. Class aptent taciti sociosqu ad
+                litora torquent per conubia nostra, per inceptos himenaeos.
+                Vestibulum accumsan tortor sed mi condimentum, at lobortis elit
+                faucibus.
+              </p>
+              <div className="grid grid-cols-5 gap-3">
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
+                <div className="w-full h-20 bg-bg-primary/60 border border-bg-600/30 rounded-sm clip-path-button"></div>
               </div>
-            </Section>
-          </AnimateSection>
+            </div>
+          </>
+        )}
+        {(path === "experiences" || path === "projects") && (
+          <>
+            <div className="flex flex-col gap-3 mb-8">
+              <h2
+                className={clsx("transition-colors duration-300", {
+                  "text-accent-primary": path === "experiences",
+                })}
+              >
+                /minhas experiencias
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum fermentum congue urna sed pretium. Nam id tortor
+                ipsum. Nunc nibh ex, interdum sed tortor nec, luctus vehicula
+                neque. Vestibulum a neque erat. Class aptent taciti sociosqu ad
+                litora torquent per conubia nostra, per inceptos himenaeos.
+                Vestibulum accumsan tortor sed mi condimentum, at lobortis elit
+                faucibus. Mauris hendrerit consectetur elementum. In pretium,
+                ipsum ac molestie elementum, sem ex imperdiet nulla, sit amet
+                bibendum leo ante at ante. Sed pellentesque tellus id quam
+                vestibulum, eu lobortis libero ornare. Etiam sed porttitor quam.
+                Praesent faucibus nisl vitae consectetur placerat. Mauris
+                rhoncus sem mi, nec placerat erat varius ut. Ut non felis sed
+                sem maximus tincidunt sed eget nisl. Phasellus scelerisque metus
+                nec lectus viverra ultrices aliquet dapibus nibh. Nulla suscipit
+                lorem gravida tempor venenatis. Vivamus vehicula mollis quam, ut
+                ultricies lectus lobortis at. In consequat leo ac libero egestas
+                laoreet auctor quis libero. Aliquam efficitur blandit urna quis
+                suscipit. Nulla a molestie lectus, sit amet ultrices arcu. Ut
+                rhoncus orci porta nunc lobortis tincidunt.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <h2
+                className={clsx("transition-colors duration-300", {
+                  "text-accent-primary": path === "projects",
+                })}
+              >
+                /meus projetos
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum fermentum congue urna sed pretium. Nam id tortor
+                ipsum. Nunc nibh ex, interdum sed tortor nec, luctus vehicula
+                neque. Vestibulum a neque erat. Class aptent taciti sociosqu ad
+                litora torquent per conubia nostra, per inceptos himenaeos.
+                Vestibulum accumsan tortor sed mi condimentum, at lobortis elit
+                faucibus. Mauris hendrerit consectetur elementum. In pretium,
+                ipsum ac molestie elementum, sem ex imperdiet nulla, sit amet
+                bibendum leo ante at ante. Sed pellentesque tellus id quam
+                vestibulum, eu lobortis libero ornare. Etiam sed porttitor quam.
+                Praesent faucibus nisl vitae consectetur placerat. Mauris
+                rhoncus sem mi, nec placerat erat varius ut. Ut non felis sed
+                sem maximus tincidunt sed eget nisl. Phasellus scelerisque metus
+                nec lectus viverra ultrices aliquet dapibus nibh. Nulla suscipit
+                lorem gravida tempor venenatis. Vivamus vehicula mollis quam, ut
+                ultricies lectus lobortis at. In consequat leo ac libero egestas
+                laoreet auctor quis libero. Aliquam efficitur blandit urna quis
+                suscipit. Nulla a molestie lectus, sit amet ultrices arcu. Ut
+                rhoncus orci porta nunc lobortis tincidunt.
+              </p>
+            </div>
+          </>
+        )}
+      </main>
+      <aside className="relative grid grid-rows-12 border-l border-bg-600 col-span-3 row-span-10">
+        <div className="row-span-1 border-b border-bg-600 p-3 flex justify-center items-center">
+          <h2>Lorem ipsum dolor sit amet</h2>
         </div>
-        <AnimateSection time={1500}>
-          <Section
-            className="section"
-            title="contato"
-            variant="dark"
-            id="contato"
-          >
-            <p className="text-accent mb-4">
-              # gostou do que viu? <br />
-              # quer conversar sobre algo? <br />
-              # tem algum projeto legal pra mim? <br /># entre em contato
-            </p>
-            <Input placeholder="seu e-mail" type="email" className="mb-2" />
-            <Input placeholder="mensagem" type="text" className="mb-6" />
-            <Button type="submit" className=" justify-start" size="lg">
-              ENVIAR
-            </Button>
-          </Section>
-        </AnimateSection>
-      </div>
-    </main>
+        <div className="relative row-span-11 px-6 py-4">
+          <div className="absolute -top-2 -left-2">
+            <div className="relative w-4 h-4">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-bg-400 transform -translate-y-1/2"></div>
+              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-bg-400 transform -translate-x-1/2"></div>
+            </div>
+          </div>
+
+          <div className="absolute -top-2 -right-2">
+            <div className="relative w-4 h-4">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-bg-400 transform -translate-y-1/2"></div>
+              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-bg-400 transform -translate-x-1/2"></div>
+            </div>
+          </div>
+
+          <div className="absolute -bottom-2 -left-2">
+            <div className="relative w-4 h-4">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-bg-400 transform -translate-y-1/2"></div>
+              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-bg-400 transform -translate-x-1/2"></div>
+            </div>
+          </div>
+
+          <div className="absolute -bottom-2 -right-2">
+            <div className="relative w-4 h-4">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-bg-400 transform -translate-y-1/2"></div>
+              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-bg-400 transform -translate-x-1/2"></div>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            fermentum congue urna sed pretium. Nam id tortor ipsum. Nunc nibh
+            ex, interdum sed tortor nec, luctus vehicula neque. Vestibulum a
+            neque erat. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Vestibulum accumsan tortor
+            sed mi condimentum, at lobortis elit faucibus. Mauris hendrerit
+            consectetur elementum. In pretium, ipsum ac molestie elementum, sem
+            ex imperdiet nulla, sit amet bibendum leo ante at ante. Sed
+            pellentesque tellus id quam vestibulum, eu lobortis libero ornare.
+            Etiam sed porttitor quam. Praesent faucibus nisl vitae consectetur
+            placerat. Mauris rhoncus sem mi, nec placerat erat varius ut. Ut non
+            felis sed sem maximus tincidunt sed eget nisl. Phasellus scelerisque
+            metus nec lectus viverra ultrices aliquet dapibus nibh. Nulla
+            suscipit lorem gravida tempor venenatis. Vivamus vehicula mollis
+            quam, ut ultricies lectus lobortis at. In consequat leo ac libero
+            egestas laoreet auctor quis libero. Aliquam efficitur blandit urna
+            quis suscipit. Nulla a molestie lectus, sit amet ultrices arcu. Ut
+            rhoncus orci porta nunc lobortis tincidunt.
+          </p>
+        </div>
+      </aside>
+      <nav className="col-span-12 row-span-1 grid grid-cols-10 border-t border-bg-600">
+        <div className="col-span-5 flex items-center justify-between border-bg-600 h-full px-4">
+          <NavLink linkValue="about" label="quem sou eu" />
+          <NavLink linkValue="knowledge" label="meus conhecimentos" />
+          <NavLink linkValue="experiences" label="minhas experiencias" />
+          <NavLink linkValue="projects" label="meus projetos" />
+        </div>
+        <div className="col-span-2 flex items-center justify-between gap-4 border-l border-bg-600 h-full px-6"></div>
+        <div className="col-span-3 flex items-center justify-between gap-4 border-l border-bg-600 h-full px-6">
+          <h3>Gostou do que viu?</h3>
+          <button className="primary">Entre em contato</button>
+        </div>
+      </nav>
+    </div>
   );
 }

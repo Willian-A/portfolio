@@ -6,7 +6,10 @@ import {
   ttInterphasesPro,
   ttInterphasesProMono,
   VCR_OSD_MONO,
-} from "./_contants/fonts";
+} from "./_constants/fonts";
+
+import { Toaster } from "@/components/Sooner/Sonner";
+import { TooltipProvider } from "@/components/Tooltip/Tooltip";
 
 export const metadata: Metadata = {
   title: "Willian - Desenvolvedor Web Front-end & Full-stack",
@@ -20,12 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${ttInterphasesPro.variable} ${VCR_OSD_MONO.variable} ${ttInterphasesProMono.variable} bg-page max-w-[1440px] m-auto mb-12 md:p-6`}
-      >
-        {children}
-      </body>
-    </html>
+    <TooltipProvider>
+      <html lang="en">
+        <body
+          className={`${ttInterphasesPro.variable} ${VCR_OSD_MONO.variable} ${ttInterphasesProMono.variable} bg-page max-w-[1440px] m-auto mb-12 md:p-6`}
+        >
+          {children}
+          <Toaster />
+        </body>
+      </html>
+    </TooltipProvider>
   );
 }

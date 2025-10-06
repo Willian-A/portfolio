@@ -22,7 +22,9 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/components": ["app/_components"],
+      "@/constants/*": ["app/_constants/*"],
+      "@/modules/*": ["app/_modules/*"],
+      "@/components/*": ["app/_components/*"],
       "@/hooks": ["app/_hooks"]
     }
   },

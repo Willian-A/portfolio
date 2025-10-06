@@ -1,16 +1,11 @@
-import Image from "next/image";
+import { AnimateContent } from "@/components/AnimateContent/AnimateContent";
+import { Section } from "@/components/Section/Section";
+import { AnimateSection } from "@/components/AnimateSection/AnimateSection";
 
-import {
-  AnimateContent,
-  AnimateSection,
-  Button,
-  CMDSection,
-  Input,
-  ProjectsSection,
-  Section,
-} from "@/components";
-
-import { TECH_ICONS } from "./_contants/techIcons";
+import { CMDSection } from "@/modules/CMDSection/CMDSection";
+import { ProjectsSection } from "@/modules/ProjectsSection/ProjectsSection";
+import { ContactSection } from "@/modules/ContactSection/ContactSection";
+import { TechsSection } from "@/modules/TechsSection/TechsSection";
 
 export default function Home() {
   return (
@@ -36,7 +31,7 @@ export default function Home() {
             </p>
           </AnimateContent>
         </div>
-        <AnimateSection>
+        <AnimateSection time={2500}>
           <Section
             className="h-[300px] p-0 md:p-0 rounded-none md:rounded-2xl"
             variant="dark"
@@ -75,16 +70,16 @@ export default function Home() {
                 {`charset="us-ascii"`} <br />
                 X-UIDL: c6a5409b6a9998aa957a76a002e5df09
               </p>
-              <Image
+              {/* <Image
                 className="absolute top-0 left-0 w-full h-full object-cover"
-                src="/bg.gif"
+                src=""
                 alt="background"
                 fill
-              />
+              /> */}
             </div>
           </Section>
         </AnimateSection>
-        <AnimateSection time={1250}>
+        <AnimateSection time={3000}>
           <Section
             title="sobre mim"
             description="um pouco mais sobre mim"
@@ -136,7 +131,7 @@ export default function Home() {
           </Section>
         </AnimateSection>
         <div className="relative">
-          <AnimateSection time={1500}>
+          <AnimateSection time={3500}>
             <span className="hidden z-10 md:flex gap-2 items-center absolute -left-2 -bottom-12 w-fit">
               <AnimateContent
                 className="relative text-text-accent-light text-3xl font-bold text-nowrap overflow-hidden"
@@ -153,51 +148,17 @@ export default function Home() {
         </div>
       </div>
       <div className="col-span-2 md:col-span-1 gap-4 md:gap-8 flex flex-col">
-        <AnimateSection>
+        <AnimateSection time={100}>
           <CMDSection />
         </AnimateSection>
         <div className="relative">
-          <AnimateSection time={1250}>
+          <AnimateSection time={4000}>
             <span className="absolute z-0 right-8 -top-20 bg-accent rounded-3xl w-24 h-40"></span>
-            <Section
-              className="section"
-              title="tecnologias"
-              description="tecnologias e ferramentas que já  utilizei"
-              id="tecnologias"
-            >
-              <div className="grid grid-cols-4 gap-4">
-                {TECH_ICONS.map((icon) => (
-                  <Image
-                    key={icon}
-                    src={`/tech_icons/${icon}.svg`}
-                    alt={icon}
-                    className="m-auto hover:scale-110 transition-all"
-                    height={64}
-                    width={64}
-                  />
-                ))}
-              </div>
-            </Section>
+            <TechsSection />
           </AnimateSection>
         </div>
-        <AnimateSection time={1500}>
-          <Section
-            className="section"
-            title="contato"
-            variant="dark"
-            id="contato"
-          >
-            <p className="text-accent mb-4">
-              # gostou do que viu? <br />
-              # quer conversar sobre algo? <br />
-              # tem algum projeto legal pra mim? <br /># entre em contato
-            </p>
-            <Input placeholder="seu e-mail" type="email" className="mb-2" />
-            <Input placeholder="mensagem" type="text" className="mb-6" />
-            <Button type="submit" className=" justify-start" size="lg">
-              ENVIAR
-            </Button>
-          </Section>
+        <AnimateSection time={4500}>
+          <ContactSection />
         </AnimateSection>
       </div>
     </main>

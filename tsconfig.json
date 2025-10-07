@@ -25,6 +25,7 @@
       "@/constants/*": ["app/_constants/*"],
       "@/modules/*": ["app/_modules/*"],
       "@/components/*": ["app/_components/*"],
+      "@/schemas/*": ["app/_schemas/*"],
       "@/hooks": ["app/_hooks"]
     }
   },

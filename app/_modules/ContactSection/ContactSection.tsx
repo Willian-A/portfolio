@@ -1,7 +1,5 @@
 "use client";
 
-import { toast } from "sonner";
-
 import { Button } from "@/components/Button/Button";
 import { Input } from "@/components/Input/Input";
 import { Section } from "@/components/Section/Section";

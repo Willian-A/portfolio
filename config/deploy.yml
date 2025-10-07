@@ -31,7 +31,7 @@ registry:
 
 builder:
   arch: amd64
-  remote: ssh://willian@<%= ENV['SERVER_IP_ADDRESS'] %>
+  remote: ssh://root@<%= ENV['SERVER_IP_ADDRESS'] %>
   context: .
   # cache:
   #   type: registry

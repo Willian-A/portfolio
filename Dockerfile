@@ -33,7 +33,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 ENV HOSTNAME="0.0.0.0"
 
-EXPOSE 3001
+EXPOSE 3000
 
 # Start the app
 CMD ["node", "server.js"]

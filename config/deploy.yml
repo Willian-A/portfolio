@@ -17,7 +17,7 @@ servers:
   # log_level: debug
 
 proxy:
-  app_port: 3001
+  app_port: 3000
   ssl: true
   host: willian-almeida.com
   healthcheck:

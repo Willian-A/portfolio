@@ -11,12 +11,8 @@ servers:
     hosts:
       - <%= ENV['SERVER_IP_ADDRESS'] %>
 
-# Use a different ssh user than root
-# ssh:
-#   user: willian
-
 proxy:
-  app_port: 3000
+  app_port: 3000:3000
   ssl: true
   host: willian-almeida.com
   healthcheck:

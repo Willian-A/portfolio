@@ -53,6 +53,8 @@ jobs:
 
       - name: Build and deploy
         run: |
+          kamal proxy boot_config set --http-port 4444 --https-port 4445
+          kamal proxy reboot
           kamal lock release
           kamal deploy
         env:

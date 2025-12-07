@@ -51,6 +51,24 @@ jobs:
       #   with:
       #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Check if Kamal container exists and setup if needed
+        run: |
+          # Check if container exists (checking for portfolio containers)
+          set +e
+          CONTAINER_CHECK=$(ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$SERVER_IP_ADDRESS "docker ps -a --filter 'name=portfolio' --format '{{.Names}}' | head -1")
+          set -e
+
+          if [ -z "$CONTAINER_CHECK" ]; then
+            echo "Container does not exist. Running kamal setup..."
+            kamal setup
+          else
+            echo "Container exists ($CONTAINER_CHECK). Skipping setup and proceeding with deploy..."
+          fi
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          SERVER_IP_ADDRESS: ${{ secrets.SERVER_IP_ADDRESS }}
+
       - name: Build and deploy
         run: |
           kamal lock release

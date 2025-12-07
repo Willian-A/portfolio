@@ -5,12 +5,13 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/Tooltip/Tooltip";
+import Image from "next/image";
 
 export function TechsSection() {
   const formatedTechIcons = TECH_ICONS.map((tech, index) => (
     <Tooltip key={`${tech.name}-tooltip-${index}`}>
       <TooltipTrigger>
-        <img alt={tech.name} src={tech.src} />
+        <Image alt={tech.name} src={tech.src} />
       </TooltipTrigger>
       <TooltipContent>
         <p>{tech.name}</p>

@@ -13,7 +13,8 @@ servers:
 
 # Use a different ssh user than root
 # ssh:
-#   user: willian
+  # user: willian
+  # log_level: debug
 
 proxy:
   app_port: 3000
@@ -22,6 +23,9 @@ proxy:
   healthcheck:
     path: /
     interval: 5
+  port: 80           # Adiciona o mapeamento da porta 80 do host
+  container_port: 3000 # para a porta 3000 do container, igual ao 'docker run -p 80:3000'
+  # As configurações acima fazem com que requisições na porta 80 do host sejam redirecionadas para a aplicação rodando na porta 3000 do container.
 
 registry:
   username:

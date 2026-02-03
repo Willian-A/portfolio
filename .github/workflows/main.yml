@@ -38,28 +38,19 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Check if image exists and build if needed
+      - name: Build and push Docker image
         run: |
-          IMAGE_NAME="${{ secrets.DOCKER_USERNAME }}/portfolio:latest"
-          if docker manifest inspect $IMAGE_NAME >/dev/null 2>&1; then
-            echo "Image $IMAGE_NAME already exists in registry"
-          else
-            echo "Image $IMAGE_NAME does not exist, building from scratch..."
-            docker build --no-cache -t $IMAGE_NAME .
-            docker push $IMAGE_NAME
-          fi
+          docker build --no-cache -t ${{ secrets.DOCKER_USERNAME }}/portfolio:latest .
+          docker push ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
 
       - name: Deploy to remote server via SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP_ADDRESS: ${{ secrets.SERVER_IP_ADDRESS }}
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          ssh -o StrictHostKeyChecking=no root@${SERVER_IP_ADDRESS} << EOF
-            echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
-            docker pull ${DOCKER_USERNAME}/portfolio:latest || exit 1
+          ssh -o StrictHostKeyChecking=no root@${SERVER_IP_ADDRESS} << 'EOF'
+            docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
             docker stop portfolio || true
             docker rm portfolio || true
-            docker run --restart always -d --name portfolio -p 3000:3000 ${DOCKER_USERNAME}/portfolio:latest
+            docker run --restart always -d --name portfolio -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
           EOF

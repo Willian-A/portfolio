@@ -47,10 +47,17 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP_ADDRESS: ${{ secrets.SERVER_IP_ADDRESS }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
-          ssh -o StrictHostKeyChecking=no root@${SERVER_IP_ADDRESS} << 'EOF'
-            docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+          ssh -o StrictHostKeyChecking=no root@${SERVER_IP_ADDRESS} << EOF
+            IMAGE_NAME="${{ secrets.DOCKER_USERNAME }}/portfolio:latest"
+            if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^${IMAGE_NAME}$"; then
+              echo "Image exists locally, skipping pull"
+            else
+              echo "Image does not exist, pulling from registry"
+              docker pull ${IMAGE_NAME}
+            fi
             docker stop portfolio || true
             docker rm portfolio || true
-            docker run --restart always -d --name portfolio -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+            docker run --restart always -d --name portfolio -p 3000:3000 ${IMAGE_NAME}
           EOF

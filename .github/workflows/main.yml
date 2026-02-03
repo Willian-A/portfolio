@@ -54,9 +54,11 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP_ADDRESS: ${{ secrets.SERVER_IP_ADDRESS }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           ssh -o StrictHostKeyChecking=no root@${SERVER_IP_ADDRESS} << EOF
-            docker pull ${DOCKER_USERNAME}/portfolio:latest
+            echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+            docker pull ${DOCKER_USERNAME}/portfolio:latest || exit 1
             docker stop portfolio || true
             docker rm portfolio || true
             docker run --restart always -d --name portfolio -p 3000:3000 ${DOCKER_USERNAME}/portfolio:latest

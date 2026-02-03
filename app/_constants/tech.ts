@@ -1,0 +1,18 @@
+export const TECH_NAMES = [
+  "Python",
+  "PHP",
+  "MySQL",
+  "TypeScript",
+  "MongoDB",
+  "Godot",
+  "Docker",
+  "Next.js",
+  "Three.js",
+  "Jest",
+  "GraphQL",
+  "Playwright",
+  "Cypress",
+  "Tailwind CSS",
+  "React",
+  "Node.js",
+];

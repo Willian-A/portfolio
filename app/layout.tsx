@@ -8,7 +8,6 @@ import {
   VCR_OSD_MONO,
 } from "./_constants/fonts";
 
-import { Toaster } from "@/components/Sooner/Sonner";
 import { TooltipProvider } from "@/components/Tooltip/Tooltip";
 
 export const metadata: Metadata = {
@@ -23,13 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={200}>
       <html lang="en">
         <body
           className={`${ttInterphasesPro.variable} ${VCR_OSD_MONO.variable} ${ttInterphasesProMono.variable} bg-page max-w-[1440px] m-auto mb-12 md:p-6`}
         >
           {children}
-          <Toaster />
         </body>
       </html>
     </TooltipProvider>

@@ -32,12 +32,8 @@ export default function Home() {
           </AnimateContent>
         </div>
         <AnimateSection time={2500}>
-          <Section
-            className="h-[300px] p-0 md:p-0 rounded-none md:rounded-2xl"
-            variant="dark"
-            showVersionTag={false}
-          >
-            <div className="p-4 md:pl-8 absolute top-6 md:-left-4 bg-accent/75 glass rounded-none z-40 md:rounded-2xl">
+          <div className="relative">
+            <div className="p-4 md:pl-8 absolute top-6 md:-left-6 bg-accent/75 glass rounded-none z-40 md:rounded-2xl">
               <div className="md:max-w-[550px]">
                 <p className="mb-4">
                   Olá, eu sou o <b>Willian, desenvolvedor web</b> focado na área
@@ -53,31 +49,37 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative w-full h-full p-4 flex justify-end items-end text-right rounded-none overflow-hidden z-10 opacity-75 md:rounded-2xl">
-              <p className="relative z-40 text-text-accent-dark leading-[1.5] text-xs font-tt_interphases_mono">
-                Message-Id:{" "}
-                {`<3.0.6.32.19990707142016.007ab5d0@mail.bungie.com>`} <br />
-                X-Sender: cortana@mail.bungie.com (Unverified)
-                <br /> X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6
-                (32)
-                <br /> Date: Wed, 07 Jul 1999 14:20:16 -0500 <br />
-                To: Hamish.Sinclair@tcd.ie From: Cortana{" "}
-                {`<cortana@bungie.com>`}
-                <br />
-                Subject: Cortana Saves Sinners! (And Redeems Them for Valuable
-                Cash Prizes)
-                <br /> Mime-Version: 1.0 Content-Type: text/plain;
-                {`charset="us-ascii"`} <br />
-                X-UIDL: c6a5409b6a9998aa957a76a002e5df09
-              </p>
-              {/* <Image
+            <Section
+              className="h-[300px] p-0 md:p-0 rounded-none md:rounded-2xl"
+              variant="dark"
+              showVersionTag={false}
+            >
+              <div className="relative w-full h-full p-4 flex justify-end items-end text-right rounded-none overflow-hidden z-10 opacity-75 md:rounded-2xl">
+                <p className="relative z-40 text-text-accent-dark leading-[1.5] text-xs font-tt_interphases_mono">
+                  Message-Id:{" "}
+                  {`<3.0.6.32.19990707142016.007ab5d0@mail.bungie.com>`} <br />
+                  X-Sender: cortana@mail.bungie.com (Unverified)
+                  <br /> X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6
+                  (32)
+                  <br /> Date: Wed, 07 Jul 1999 14:20:16 -0500 <br />
+                  To: Hamish.Sinclair@tcd.ie From: Cortana{" "}
+                  {`<cortana@bungie.com>`}
+                  <br />
+                  Subject: Cortana Saves Sinners! (And Redeems Them for Valuable
+                  Cash Prizes)
+                  <br /> Mime-Version: 1.0 Content-Type: text/plain;
+                  {`charset="us-ascii"`} <br />
+                  X-UIDL: c6a5409b6a9998aa957a76a002e5df09
+                </p>
+                {/* <Image
                 className="absolute top-0 left-0 w-full h-full object-cover"
                 src=""
                 alt="background"
                 fill
               /> */}
-            </div>
-          </Section>
+              </div>
+            </Section>
+          </div>
         </AnimateSection>
         <AnimateSection time={3000}>
           <Section
@@ -142,7 +144,7 @@ export default function Home() {
               </AnimateContent>
             </span>
             <span className="absolute left-8 md:left-12 -top-20 bg-accent rounded-2xl w-16 md:w-16 h-32 md:h-64" />
-            <span className="absolute right-20 md:-right-20 -top-16 md:top-64 bg-accent rounded-xl w-4 md:w-64 h-24 md:h-12" />
+            <span className="absolute right-20 md:-right-20 -top-16 md:top-72 bg-accent rounded-xl w-4 md:w-36 h-24 md:h-64" />
             <ProjectsSection />
           </AnimateSection>
         </div>
